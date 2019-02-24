@@ -1,0 +1,108 @@
+body{
+    background-color: black;
+}
+.number{
+    background-color: cadetblue;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.operator{
+    background-color: darkgray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#clear{
+    background-color: brown;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#container{
+    position: relative;
+    top: 100px;
+    padding: 4px;
+    margin: auto;
+    background-color: black;
+    width: 200px;
+    height: 300px;
+    display: grid; 
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas: 
+        "display display display display"
+        "display display display display"
+        "AC AC divide multiply"
+        "seven eight nine subtract"
+        "four five six add"
+        "one two three equal"
+        "zero zero decimal equal";
+    grid-gap: 2px; 
+}
+
+#display{
+    grid-area: display;
+    background-color: gray;
+}
+#zero{
+    grid-area: zero;
+}
+#one{
+    grid-area: one;
+}
+#two{
+    grid-area: two;
+}
+#three{
+    grid-area: three;
+}
+#four{
+    grid-area: four;
+}
+#five{
+    grid-area: five;
+}
+#six{
+    grid-area: six;
+}
+#seven{
+    grid-area: seven;
+}
+#eight{
+    grid-area: eight;
+}
+#nine{
+    grid-area: nine;
+}
+
+#add{
+    grid-area: add;
+}
+#subtract{
+    grid-area: subtract;
+}
+#divide{
+    grid-area: divide;
+}
+#multiply{
+    grid-area: multiply;
+}
+#equals{
+    grid-area: equal;
+}
+#decimal{
+    grid-area: decimal;
+    background-color: lightgray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#clear{
+    grid-area: AC;
+}
