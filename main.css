@@ -1,6 +1,19 @@
 body{
-    background-color: black;
+    background-color:black;
+
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
 }
+
+#display{
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .number{
     background-color: cadetblue;
     text-align: center;
@@ -29,7 +42,6 @@ body{
     top: 100px;
     padding: 4px;
     margin: auto;
-    background-color: black;
     width: 200px;
     height: 300px;
     display: grid; 
@@ -105,4 +117,8 @@ body{
 }
 #clear{
     grid-area: AC;
+}
+
+.pressed{
+    transform: scale(0.96, 0.96);
 }
