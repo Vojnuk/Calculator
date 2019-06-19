@@ -1,39 +1,45 @@
 document.addEventListener('DOMContentLoaded', ()=>{
-    console.log('DOM ready')
 
 "use strict"
 
 let display = document.getElementById('display')
+let container = document.getElementById('container');
 
-let numContainer = document.getElementById('container');
-numContainer.addEventListener('click', e => {
-
-    /*
-        PROBLEM: klikom na display dobija se nula. 
-        Verovatno implicitna konverzija, taj tag nema nikakvu vrednost.
-        VEROVATNO RESENJE:
-        Obuhvati posebnim <div> samo brojeve i 
-        operatore, bez displeja.
-    */ 
-
-    // problem sto na klik display ne vraca nista
-    if ( e.target === document.querySelector('#display') ) return "jeste";
-    if ( isNaN (Number(e.target.textContent)) ){
-        console.log (e.target.textContent);
-        display.textContent += e.target.textContent;
-    } else {
-        console.log(Number(e.target.textContent));
-        display.textContent += Number(e.target.textContent);
-    }
-    /*
-    Za AC i = moras definisati za njih specificne operacije.
-    Vidi da li Math objekat poseduje za +,-,=,/,* 
-    tacno definisane operacije.
-    */ 
-
+container.addEventListener('mousedown', e => {
+    //fixing strange behaviour of duplicating input values in display 
+    if ( e.target === document.querySelector('#display') ) return e.stopPropagation();
     
+    //pressing button animation
+    e.target.classList.add('pressed')
+
+    //limiting number of characters on display
+    if ( display.textContent.length > 20 ){
+        console.log("Only 20 characters allowed");
+        e.stopPropagation();
+    }
+      else if ( e.target === document.querySelector('#clear') ){
+        display.textContent = "";
+      }
+      else if ( e.target === document.querySelector('#equals') ){
+          display.textContent = eval( display.textContent );
+      }
+      else{ 
+          display.textContent += e.target.textContent;
+      }   
 
 })
 
+container.addEventListener('mouseup', e => {
+        e.target.classList.remove('pressed');
+})
+
+container.addEventListener( 'mouseover', (e)=>{
+    e.relatedTarget.classList.remove('pressed');
+})
+
+
+
+
+// guarding against multiple operators
 
 })
