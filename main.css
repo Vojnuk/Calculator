@@ -11,7 +11,7 @@ body{
     padding: 10px;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-end;
 }
 
 .number{
@@ -23,7 +23,8 @@ body{
 
 }
 
-.operator{
+.operator,
+#equals{
     background-color: darkgray;
     display: flex;
     justify-content: center;
@@ -53,8 +54,8 @@ body{
         "AC AC divide multiply"
         "seven eight nine subtract"
         "four five six add"
-        "one two three equal"
-        "zero zero decimal equal";
+        "one two three equals"
+        "zero zero decimal equals";
     grid-gap: 2px; 
 }
 
@@ -106,7 +107,7 @@ body{
     grid-area: multiply;
 }
 #equals{
-    grid-area: equal;
+    grid-area: equals;
 }
 #decimal{
     grid-area: decimal;
@@ -119,6 +120,7 @@ body{
     grid-area: AC;
 }
 
+/*button animation*/
 .pressed{
     transform: scale(0.96, 0.96);
 }
