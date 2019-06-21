@@ -32,17 +32,10 @@ container.addEventListener('mousedown', e => {
         buffer = [];
     }
     //check number limit
-    else if ( (bufferCharsLength + numbersString.length) >= 10 
-        /*
-        && 
-        ( e.target.classList.contains('number') 
-            || 
-          e.target.textContent === '.'
-        )*/
-       ){
+    else if ( (bufferCharsLength + numbersString.length) >= 20 ){
         e.stopImmediatePropagation();
         let currentInput = display.textContent;
-        display.textContent = "Only 10 characters allowed!";
+        display.textContent = "20 characters allowed!";
         window.setTimeout(() => {
             display.textContent = currentInput;
         }, 1000);
@@ -136,7 +129,6 @@ container.addEventListener( 'mouseover', (e)=>{
     if( e.relatedTarget.classList.contains('pressed') ){
         e.relatedTarget.classList.remove('pressed');
     }else return 0;
- 
 })
 
 
